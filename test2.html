@@ -2,294 +2,482 @@
 <head>
 </head>
 <body>
-  <script type="text/javascript">
-  /*<![CDATA[*/
+<p> ONE </p>
+<script type="text/javascript">
+/*<![CDATA[*/
 
-  (function () {
-    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-    if (window.ShopifyBuy) {
-      if (window.ShopifyBuy.UI) {
-        ShopifyBuyInit();
-      } else {
-        loadScript();
-      }
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
     } else {
       loadScript();
     }
+  } else {
+    loadScript();
+  }
 
-    function loadScript() {
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = scriptURL;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-      script.onload = ShopifyBuyInit;
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'acu-precision-sheet-metal.myshopify.com',
+      apiKey: '985e4fc5263212e4aa230eef0b18422a',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: [434821029],
+        node: document.getElementById('product-component-69a88e707cd'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "buttonDestination": "cart",
+    "layout": "vertical",
+    "variantId": "all",
+    "width": "240px",
+    "contents": {
+      "img": false,
+      "title": false,
+      "variantTitle": false,
+      "options": true,
+      "price": false,
+      "description": false,
+      "buttonWithQuantity": false,
+      "button": true,
+      "quantity": false
+    },
+    "text": {
+      "button": "ADD TO CART"
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "background-color": "#0069d2",
+        "color": "#ffffff",
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        "padding-left": "9px",
+        "padding-right": "9px",
+        "border": "none",
+        ":hover": {
+          "background-color": "#005fbd",
+          "color": "#ffffff"
+        },
+        "border-radius": "1px",
+        ":focus": {
+          "background-color": "#005fbd"
+        }
+      },
+      "variantTitle": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-size": "14px",
+        "color": "#4c4c4c"
+      },
+      "title": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "bold",
+        "font-size": "18px",
+        "color": "#4c4c4c"
+      },
+      "description": {
+        "color": "#4c4c4c",
+        "font-size": "14px",
+        "font-family": "Helvetica Neue, sans-serif"
+      },
+      "price": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-size": "14px",
+        "color": "#4c4c4c"
+      },
+      "quantityInput": {
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        "color": "#4c4c4c"
+      }
     }
-
-    function ShopifyBuyInit() {
-      var client = ShopifyBuy.buildClient({
-        domain: 'acu-precision-sheet-metal.myshopify.com',
-        apiKey: '985e4fc5263212e4aa230eef0b18422a',
-        appId: '6',
+  },
+  "cart": {
+    "contents": {
+      "title": true,
+      "lineItems": true,
+      "footer": true,
+      "button": true
+    },
+    "text": {
+      "title": "Cart",
+      "total": "Total",
+      "notice": "Shipping and discount codes are added at checkout.",
+      "button": "CHECKOUT",
+      "empty": "Your cart is empty."
+    },
+    "styles": {
+      "button": {
+        "background-color": "#0069d2",
+        "color": "#ffffff",
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        "padding-left": "26px",
+        "padding-right": "26px",
+        "border": "none",
+        ":hover": {
+          "background-color": "#005fbd",
+          "color": "#ffffff"
+        },
+        "border-radius": "1px",
+        ":focus": {
+          "background-color": "#005fbd"
+        }
+      },
+      "cart": {
+        "background-color": "#ffffff"
+      },
+      "footer": {
+        "background-color": "#ffffff"
+      },
+      "title": {
+        "color": "#4c4c4c"
+      },
+      "close": {
+        ":hover": {
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": true,
+      "title": true,
+      "variantTitle": false,
+      "options": true,
+      "price": true,
+      "description": true,
+      "buttonWithQuantity": false,
+      "button": true,
+      "quantity": false
+    },
+    "text": {
+      "button": "ADD TO CART"
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "background-color": "#0069d2",
+        "color": "#ffffff",
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        "padding-left": "9px",
+        "padding-right": "9px",
+        "border": "none",
+        ":hover": {
+          "background-color": "#005fbd",
+          "color": "#ffffff"
+        },
+        "border-radius": "1px",
+        ":focus": {
+          "background-color": "#005fbd"
+        }
+      },
+      "variantTitle": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-size": "14px",
+        "color": "#4c4c4c"
+      },
+      "title": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "bold",
+        "font-size": "26px",
+        "color": "#4c4c4c"
+      },
+      "description": {
+        "color": "#4c4c4c",
+        "font-size": "14px",
+        "font-family": "Helvetica Neue, sans-serif"
+      },
+      "price": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-size": "18px",
+        "color": "#4c4c4c"
+      },
+      "quantityInput": {
+        "font-size": "16px",
+        "padding-top": "16px",
+        "padding-bottom": "16px",
+        "color": "#4c4c4c"
+      },
+      "compareAt": {
+        "font-size": "15px"
+      }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "background-color": "#0069d2",
+        ":hover": {
+          "background-color": "#005fbd"
+        },
+        ":focus": {
+          "background-color": "#005fbd"
+        }
+      },
+      "count": {
+        "font-size": "16px"
+      }
+    }
+  },
+  "modal": {
+    "styles": {
+      "modal": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "option": {
+    "styles": {
+      "label": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "color": "#4c4c4c"
+      },
+      "select": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "color": "#4c4c4c"
+      }
+    }
+  }
+}
       });
+    });
+  }
+})();
+/*]]>*/
+</script>
 
-      ShopifyBuy.UI.onReady(client).then(function (ui) {
-        ui.createComponent('product', {
-          id: [434821029],
-          node: document.getElementById('product-component-69a88e707cd'),
-          moneyFormat: '%24%7B%7Bamount%7D%7D',
-          options: {
-    "product": {
-      "buttonDestination": "cart",
-      "layout": "vertical",
-      "variantId": "all",
-      "width": "240px",
-      "contents": {
-        "img": false,
-        "title": false,
-        "variantTitle": false,
-        "options": true,
-        "price": false,
-        "description": false,
-        "buttonWithQuantity": false,
-        "button": true,
-        "quantity": false
-      },
-      "text": {
-        "button": "ADD TO CART"
-      },
-      "styles": {
-        "product": {
-          "@media (min-width: 601px)": {
-            "max-width": "calc(25% - 20px)",
-            "margin-left": "20px",
-            "margin-bottom": "50px"
-          }
-        },
-        "button": {
-          "background-color": "#0069d2",
-          "color": "#ffffff",
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-size": "16px",
-          "padding-top": "16px",
-          "padding-bottom": "16px",
-          "padding-left": "9px",
-          "padding-right": "9px",
-          "border": "none",
-          ":hover": {
-            "background-color": "#005fbd",
-            "color": "#ffffff"
-          },
-          "border-radius": "1px",
-          ":focus": {
-            "background-color": "#005fbd"
-          }
-        },
-        "variantTitle": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-size": "14px",
-          "color": "#4c4c4c"
-        },
-        "title": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-weight": "bold",
-          "font-size": "18px",
-          "color": "#4c4c4c"
-        },
-        "description": {
-          "color": "#4c4c4c",
-          "font-size": "14px",
-          "font-family": "Helvetica Neue, sans-serif"
-        },
-        "price": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-size": "14px",
-          "color": "#4c4c4c"
-        },
-        "quantityInput": {
-          "font-size": "16px",
-          "padding-top": "16px",
-          "padding-bottom": "16px",
-          "color": "#4c4c4c"
-        }
-      }
+<p> Two </p>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'acu-precision-sheet-metal.myshopify.com',
+      apiKey: '989a0b2c3252a0fffee3aa3b0029aa32',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: [8528833357],
+        variantId: 1169490737,
+        node: document.getElementById('product-component-ee2e1993808'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "variantId": "1169490737",
+    "width": "240px",
+    "isButton": true,
+    "contents": {
+      "variantTitle": false,
+      "options": false,
+      "description": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
     },
-    "cart": {
-      "contents": {
-        "title": true,
-        "lineItems": true,
-        "footer": true,
-        "button": true
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0",
+          "margin-bottom": "50px"
+        }
       },
-      "text": {
-        "title": "Cart",
-        "total": "Total",
-        "notice": "Shipping and discount codes are added at checkout.",
-        "button": "CHECKOUT",
-        "empty": "Your cart is empty."
+      "button": {
+        "background-color": "#0069d2",
+        "padding-left": "9px",
+        "padding-right": "9px",
+        ":hover": {
+          "background-color": "#005fbd"
+        },
+        "border-radius": "1px",
+        ":focus": {
+          "background-color": "#005fbd"
+        }
       },
-      "styles": {
-        "button": {
-          "background-color": "#0069d2",
-          "color": "#ffffff",
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-size": "16px",
-          "padding-top": "16px",
-          "padding-bottom": "16px",
-          "padding-left": "26px",
-          "padding-right": "26px",
-          "border": "none",
-          ":hover": {
-            "background-color": "#005fbd",
-            "color": "#ffffff"
-          },
-          "border-radius": "1px",
-          ":focus": {
-            "background-color": "#005fbd"
-          }
-        },
-        "cart": {
-          "background-color": "#ffffff"
-        },
-        "footer": {
-          "background-color": "#ffffff"
-        },
-        "title": {
-          "color": "#4c4c4c"
-        },
-        "close": {
-          ":hover": {
-          }
-        }
-      }
-    },
-    "modalProduct": {
-      "contents": {
-        "img": true,
-        "title": true,
-        "variantTitle": false,
-        "options": true,
-        "price": true,
-        "description": true,
-        "buttonWithQuantity": false,
-        "button": true,
-        "quantity": false
+      "title": {
+        "color": "#504e4e"
       },
-      "text": {
-        "button": "ADD TO CART"
+      "compareAt": {
+        "font-size": "12px"
+      }
+    }
+  },
+  "cart": {
+    "contents": {
+      "button": true
+    },
+    "text": {
+      "total": "Total"
+    },
+    "styles": {
+      "button": {
+        "background-color": "#0069d2",
+        ":hover": {
+          "background-color": "#005fbd"
+        },
+        "border-radius": "1px",
+        ":focus": {
+          "background-color": "#005fbd"
+        }
       },
-      "styles": {
-        "product": {
-          "@media (min-width: 601px)": {
-            "max-width": "100%",
-            "margin-left": "0px",
-            "margin-bottom": "0px"
-          }
-        },
-        "button": {
-          "background-color": "#0069d2",
-          "color": "#ffffff",
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-size": "16px",
-          "padding-top": "16px",
-          "padding-bottom": "16px",
-          "padding-left": "9px",
-          "padding-right": "9px",
-          "border": "none",
-          ":hover": {
-            "background-color": "#005fbd",
-            "color": "#ffffff"
-          },
-          "border-radius": "1px",
-          ":focus": {
-            "background-color": "#005fbd"
-          }
-        },
-        "variantTitle": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-size": "14px",
-          "color": "#4c4c4c"
-        },
-        "title": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-weight": "bold",
-          "font-size": "26px",
-          "color": "#4c4c4c"
-        },
-        "description": {
-          "color": "#4c4c4c",
-          "font-size": "14px",
-          "font-family": "Helvetica Neue, sans-serif"
-        },
-        "price": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-size": "18px",
-          "color": "#4c4c4c"
-        },
-        "quantityInput": {
-          "font-size": "16px",
-          "padding-top": "16px",
-          "padding-bottom": "16px",
-          "color": "#4c4c4c"
-        },
-        "compareAt": {
-          "font-size": "15px"
-        }
+      "footer": {
+        "background-color": "#ffffff"
       }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "variantTitle": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
     },
-    "productSet": {
-      "styles": {
-        "products": {
-          "@media (min-width: 601px)": {
-            "margin-left": "-20px"
-          }
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
         }
-      }
-    },
-    "toggle": {
-      "styles": {
-        "toggle": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "background-color": "#0069d2",
-          ":hover": {
-            "background-color": "#005fbd"
-          },
-          ":focus": {
-            "background-color": "#005fbd"
-          }
+      },
+      "button": {
+        "background-color": "#0069d2",
+        "padding-left": "9px",
+        "padding-right": "9px",
+        ":hover": {
+          "background-color": "#005fbd"
         },
-        "count": {
-          "font-size": "16px"
+        "border-radius": "1px",
+        ":focus": {
+          "background-color": "#005fbd"
         }
+      },
+      "variantTitle": {
+        "color": "#0069d2"
+      },
+      "title": {
+        "color": "#fa0000"
+      },
+      "description": {
+        "color": "#0069d2"
+      },
+      "price": {
+        "font-size": "22px",
+        "color": "#0e0101"
+      },
+      "compareAt": {
+        "font-size": "18.7px"
       }
-    },
-    "modal": {
-      "styles": {
-        "modal": {
-          "background-color": "#ffffff"
-        }
-      }
-    },
-    "option": {
-      "styles": {
-        "label": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-weight": "normal",
-          "color": "#4c4c4c"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#0069d2",
+        ":hover": {
+          "background-color": "#005fbd"
         },
-        "select": {
-          "font-family": "Helvetica Neue, sans-serif",
-          "font-weight": "normal",
-          "color": "#4c4c4c"
+        ":focus": {
+          "background-color": "#005fbd"
+        }
+      },
+      "count": {
+        "font-size": "16px"
+      }
+    }
+  },
+  "option": {
+    "styles": {
+      "label": {
+        "color": "#0069d2"
+      }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
         }
       }
     }
   }
-        });
+}
       });
-    }
-  })();
-  /*]]>*/
-  </script>
+    });
+  }
+})();
+/*]]>*/
+</script>
 
 </body>
 </html>
