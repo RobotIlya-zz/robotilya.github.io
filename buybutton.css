@@ -1195,3 +1195,6 @@ input[type=number]::-webkit-outer-spin-button {
 h1 {
   text-align: center;
 }
+cart-toggle {
+        background-color: #6441A4
+      }
