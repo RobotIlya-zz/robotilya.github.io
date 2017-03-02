@@ -826,7 +826,6 @@ input[type=number]::-webkit-outer-spin-button {
 .shopify-buy__cart {
   height: 100%;
   background-color: #fff;
-  bottom: 0;
   box-shadow: -5px 0 5px rgba(0, 0, 0, .1);
 }
 .shopify-buy__cart__header {
