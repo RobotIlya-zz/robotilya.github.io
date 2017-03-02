@@ -4,89 +4,106 @@
 </head>
 <body>
   <div id='collection-component-f250f2310c7'></div>
-  <script type="text/javascript">
-  /*<![CDATA[*/
+  <div id='collection-component-76355876b6c'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
 
-  (function () {
-    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-    if (window.ShopifyBuy) {
-      if (window.ShopifyBuy.UI) {
-        ShopifyBuyInit();
-      } else {
-        loadScript();
-      }
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
     } else {
       loadScript();
     }
+  } else {
+    loadScript();
+  }
 
-    function loadScript() {
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = scriptURL;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-      script.onload = ShopifyBuyInit;
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'save-circuit.myshopify.com',
+      apiKey: 'fefaf50f6d4e23beb6077ecc51b52397',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('collection', {
+        id: 413164305,
+        node: document.getElementById('collection-component-76355876b6c'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "variantId": "all",
+    "contents": {
+      "imgWithCarousel": false,
+      "variantTitle": false,
+      "description": false,
+      "buttonWithQuantity": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      }
     }
-
-    function ShopifyBuyInit() {
-      var client = ShopifyBuy.buildClient({
-        domain: 'save-circuit.myshopify.com',
-        apiKey: 'fefaf50f6d4e23beb6077ecc51b52397',
-        appId: '6',
-      });
-
-      ShopifyBuy.UI.onReady(client).then(function (ui) {
-        ui.createComponent('collection', {
-          id: 413164305,
-          node: document.getElementById('collection-component-f250f2310c7'),
-          moneyFormat: '%24%7B%7Bamount%7D%7D',
-          options: {
-    "product": {
-      "iframe":false,
-      "variantId": "all",
-      "contents": {
-        "imgWithCarousel": false,
-        "variantTitle": false,
-        "description": false,
-        "buttonWithQuantity": false,
-        "quantity": false
-      },
-      "styles": {
-        "product": {
-         "@media (min-width: 601px)": {
-            "max-width": "calc(25% - 20px)",
-            "margin-left": "20px",
-            "margin-bottom": "50px"
-          }
+  },
+  "cart": {
+    "contents": {
+      "button": true
+    },
+    "styles": {
+      "footer": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "variantTitle": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
         }
       }
-    },
-    "cart": {
-      "iframe":false,
-      "contents": {
-        "button": true
-      },
-      "styles": {
-        "footer": {
-          "background-color": "#ffffff"
-        }
-      }
-    },
-    "productSet": {
-      "iframe": false,
-      "styles": {
-        "products": {
-          "@media (min-width: 601px)": {
-            "margin-left": "-20px"
-          }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
         }
       }
     }
   }
-        });
+}
       });
-    }
-  })();
-  /*]]>*/
-  </script>
+    });
+  }
+})();
+/*]]>*/
+</script>
 </body>
 </html>
