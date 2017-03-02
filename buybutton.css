@@ -1197,8 +1197,8 @@ h1 {
 }
 .twitch-profile-header {
   width: 100%;
-  height: 50px;
-  position: absolute;
+  height: 10px;
+  position: relative;
   background-color: #6441A4;
 }
 .twitch-profile-header h1 {
