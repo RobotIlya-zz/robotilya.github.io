@@ -120,13 +120,13 @@
 })();
 /*]]>*/
 </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
   $(document).ready(function(){
     $.getJSON('https://api.twitch.tv/kraken/channels/horusrogue?client_id=cl2b2vft7zapavsc3hqas84euiyf4g', function(channel) {
 
       $('.profile-name').text(channel['name']);
-      
+
     });
   })
 
