@@ -1201,3 +1201,8 @@ h1 {
   position: absolute;
   background-color: #6441A4;
 }
+
+.twitch-profile-header h1 {
+  text-transform: capitalize;
+  font-weight: bold;
+}
