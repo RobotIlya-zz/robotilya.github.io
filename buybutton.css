@@ -730,7 +730,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .shopify-buy__product-img-wrapper {
-    height: 100%;
+    height: 25%;
     padding-right: 30px;
   }
 
@@ -1195,6 +1195,3 @@ input[type=number]::-webkit-outer-spin-button {
 h1 {
   text-align: center;
 }
-cart-toggle {
-        background-color: #6441A4;
-      }
