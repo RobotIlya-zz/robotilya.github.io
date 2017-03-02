@@ -828,7 +828,7 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #fff;
   width: calc(100% - 10px);
   position: absolute;
-  bottom: 0;
+  right: 0;
   box-shadow: -5px 0 5px rgba(0, 0, 0, .1);
 }
 .shopify-buy__cart__header {
