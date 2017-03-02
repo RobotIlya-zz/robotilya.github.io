@@ -1218,6 +1218,14 @@ h1 {
   font-weight: bold;
   font-size: 18px;
 }
+.twitch-profile__info span {
+  display: block;
+  font-size: 14px;
+}
+.twitch-profile__info span:a {
+  color: white;
+}
+
 .twitch-profile-header img {
   display: block;
   float: left;
