@@ -50,12 +50,34 @@
         "buttonWithQuantity": false,
         "quantity": false
       },
+      "styles": {
+        "product": {
+         "@media (min-width: 601px)": {
+            "max-width": "calc(25% - 20px)",
+            "margin-left": "20px",
+            "margin-bottom": "50px"
+          }
+        }
+      }
     },
     "cart": {
       "iframe":false,
       "contents": {
         "button": true
+      },
+      "styles": {
+        "footer": {
+          "background-color": "#ffffff"
+        }
       }
+    },
+    "productSet": {
+      "styles": {
+        "products": {
+          "@media (min-width: 601px)": {
+            "margin-left": "-20px"
+          }
+        }
       }
     }
   }
