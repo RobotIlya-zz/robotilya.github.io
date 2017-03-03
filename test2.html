@@ -131,7 +131,7 @@
 
       if (channel) {
         $('.profile-name').text(channel['name']);
-        document.title = "Buy" + (channel['name']) + "Testing";
+        $(document).attr("title", (channel['name']));
         if (channel['logo']) {
           $('#logo').attr('src', channel['logo']);
         }
