@@ -129,9 +129,12 @@
   $(document).ready(function(){
     $.getJSON('https://api.twitch.tv/kraken/channels/horusrogue?client_id=cl2b2vft7zapavsc3hqas84euiyf4g', function(channel) {
       var Sname = channel['name'];
+      Sname = Sname.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+      return letter.toUpperCase();
+      });
       if (channel) {
         $('.profile-name').text(channel['name']);
-        document.title = Sname.toUpperCase() + ' Merch Store!';
+        document.title = Sname + ' Merch Store!';
         if (channel['logo']) {
           $('#logo').attr('src', channel['logo']);
         }
