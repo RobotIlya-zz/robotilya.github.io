@@ -131,7 +131,7 @@
       var Sname = channel['name'];
       if (channel) {
         $('.profile-name').text(channel['name']);
-        document.title = Sname + ' Merch Store!';
+        document.title = Sname.toUpperCase() + ' Merch Store!';
         if (channel['logo']) {
           $('#logo').attr('src', channel['logo']);
         }
