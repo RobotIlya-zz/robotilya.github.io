@@ -131,6 +131,7 @@
 
       if (channel) {
         $('.profile-name').text(channel['name']);
+        document.title = 'Buy' + (channel['name']) + 'Testing';
         if (channel['logo']) {
           $('#logo').attr('src', channel['logo']);
         }
@@ -138,7 +139,7 @@
         console.log('no bueno');
       }
 $(document).ready(function() {
-        document.title = 'Testing';
+        document.title = 'Buy Testing';
     });
 
     });
