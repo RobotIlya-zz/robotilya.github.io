@@ -121,7 +121,7 @@ input {
   pointer-events: none;
 }
 .shopify-buy__btn--close {
-  position: relative;
+  position: absolute;
   right: 9px;
   top: 8px;
   font-size: 35px;
