@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Minesweeper JS</title>
+ <meta name="version" content="0.1">
+<script type="text/javascript">
+let randSeed = Math.random() * 100; //Generate the number of mines based off a random seed
+let roundSeed = Math.round(randSeed); // Rounds the number of mines to closest whole number
+function easyMineCount(){ // Adjust the number of mines to fit the EASY mode spec
+
+};
+function intMineCount(){ // Adjust the number of mines to fit the INTERMEDIATE mode spec
+
+};
+function hardMineCount(){ // Adjust the number of mines to fit the HARD mode spec
+
+};
+
+</script>
+</head>
+
+<body>
+  <center> <h1> Play Minesweeper JS</h1> </center>
+  <table align="center" id="MineS">
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+    <tr>
+      <td><button type="button">?</button></td>
+        <td><button type="button">?</button></td>
+          <td><button type="button">?</button></td>
+            <td><button type="button">?</button></td>
+              <td><button type="button">?</button></td>
+                <td><button type="button">?</button></td>
+                  <td><button type="button">?</button></td>
+                    <td><button type="button">?</button></td>
+                      <td><button type="button">?</button></td>
+                        <td><button type="button">?</button></td>
+                          <td><button type="button">?</button></td>
+                            <td><button type="button">?</button></td>
+                              <td><button type="button">?</button></td>
+                                <td><button type="button">?</button></td>
+                                  <td><button type="button">?</button></td>
+                                    <td><button type="button">?</button></td>
+                                      <td><button type="button">?</button></td>
+    </tr>
+  </table>
+
+
+</body>
+</html>
