@@ -16,19 +16,34 @@ function genGrid() {
 
 for (var i = 0; i < 16; i++) {
     let table = document.getElementById("Game");
-        let row = table.insertRow();
+        let row = table.insertRow(0);
         row.setAttribute("id", i);
         table.appendChild(row);
       }
-for (var i = 0; i < 16; i++) {
-  let row = document.getElementById(i);
+
+for (var i = 0; i < 31; i++) {
+  let row = document.getElementById(i); // Find the rows that were created above and iterate through them
+  console.log("i is currently looking at this row: " + i)
+  let secondRow = document.getElementById(15)
+  if (secondRow){ // Column two population runs here
+console.log("The value of the element is: " + secondRow);
+    for (var y = 15; y < 31; y++) {
+    let row = document.getElementById(y-15);
+    let cell = row.insertCell(0);
+    cell.setAttribute("id", (y-15)+16);
+    row.appendChild(cell);
+    cell.innerHTML = "NEW CELL" + ((y-15)+16);
+    if (document.getElementById(31)){
+      break;
+    }
+    }
+  }
     let cell = row.insertCell(0);
     cell.setAttribute("id", i);
     row.appendChild(cell);
   cell.innerHTML = "NEW CELL" + i;
 }
 }
-
 console.log("The current number of mine is " + roundSeed);
 function easyMineCount(x){ // Adjust the number of mines to fit the EASY mode spec
 if (x < 15){
