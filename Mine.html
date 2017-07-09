@@ -10,9 +10,9 @@ let roundSeed = Math.round(randSeed); // Rounds the number of mines to closest w
 function genGrid() {
 
     let x = document.createElement("TABLE");
-    x.setAttribute("id", "Game");
-    x.setAttribute("border", "1");
-    document.body.appendChild(x);
+      x.setAttribute("id", "Game");
+        x.setAttribute("border", "1");
+          document.body.appendChild(x);
 
 for (var i = 0; i < 16; i++) { // This creates 16 rows
     let table = document.getElementById("Game");
@@ -241,6 +241,10 @@ function checkForMine() {
   }
     document.getElementById("square").innerHTML = "YOU CLICKED ME!";
 } */
+let table = document.getElementById("Game");
+console.log(table);
+var colNum = table.rows[0].cells.length;
+console.log("There are this many columns in the first row: " + colNum);
 </script>
 </head>
 
