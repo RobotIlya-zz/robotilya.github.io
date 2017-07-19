@@ -27,7 +27,6 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
   row.appendChild(cell);
   cell.innerHTML = "NEW CELL" + i;
   let secondRow = document.getElementById("C15"); // This is redundant and has been added for testing
-
   if (secondRow){ // If the script finds a value with ID=15, which it should
     for (var y = 0; y < 16; y++) {
       let row = document.getElementById(y);
@@ -175,9 +174,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                                                         cell.setAttribute("id", "C"+(n+240));
                                                         row.appendChild(cell);
                                                         cell.innerHTML = "NEW CELL" + (n+240);
-
-
-
+                                                        if (n==15){console.log("THE TABLE SHOULD BE DONE NOW");}
     }
       }
         }
@@ -188,6 +185,12 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                   }
                     }
                       }
+                        }
+                          }
+                            }
+                              }
+                                }
+                                  }
                     }
                       }
                     }
@@ -204,13 +207,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                       }
                     }
                       }
-                    }
-                      }
-                    }
-                      }
-                    }
-                      }
-console.log("The current number of mine is " + roundSeed);
+console.log("The current number of mines is " + roundSeed);
 function easyMineCount(x){ // Adjust the number of mines to fit the EASY mode spec
 if (x < 15){
   return x;
@@ -224,12 +221,11 @@ else {
 };
 console.log("The current number of mines for easy mode is now: " + easyMineCount(roundSeed));
 
-function intMineCount(){ // Adjust the number of mines to fit the INTERMEDIATE mode spec
-
+/* function intMineCount(){ // Adjust the number of mines to fit the INTERMEDIATE mode spec
 };
 function hardMineCount(){ // Adjust the number of mines to fit the HARD mode spec
-
 };
+*/
 
 /* document.getElementById("square").onclick = function() {checkForMine()};
 
@@ -241,322 +237,18 @@ function checkForMine() {
   }
     document.getElementById("square").innerHTML = "YOU CLICKED ME!";
 } */
-let table = document.getElementById("Game");
-console.log(table);
-var colNum = table.rows[0].cells.length;
-console.log("There are this many columns in the first row: " + colNum);
+window.setTimeout(gameTime, 1);//My table was being generated at the same time I tried to find it. This solves that issue by waiting 1ms
+function gameTime(){
+    let table = document.getElementById("Game");
+    for (var i=0;i<16;i++){
+      let colNum = table.rows[i].cells.length;
+      console.log("There are this many columns in the " + i + "th row: " + colNum);
+    }
+    };
 </script>
 </head>
 
 <body onload="genGrid()">
   <center> <h1> Play Minesweeper JS</h1> </center>
-  <table align="center" id="MineS">
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-    <tr>
-      <td><button type="button" id="square">?</button></td>
-        <td><button type="button" id="square">?</button></td>
-          <td><button type="button" id="square">?</button></td>
-            <td><button type="button" id="square">?</button></td>
-              <td><button type="button" id="square">?</button></td>
-                <td><button type="button" id="square">?</button></td>
-                  <td><button type="button" id="square">?</button></td>
-                    <td><button type="button" id="square">?</button></td>
-                      <td><button type="button" id="square">?</button></td>
-                        <td><button type="button" id="square">?</button></td>
-                          <td><button type="button" id="square">?</button></td>
-                            <td><button type="button" id="square">?</button></td>
-                              <td><button type="button" id="square">?</button></td>
-                                <td><button type="button" id="square">?</button></td>
-                                  <td><button type="button" id="square">?</button></td>
-                                    <td><button type="button" id="square">?</button></td>
-                                      <td><button type="button" id="square">?</button></td>
-    </tr>
-  </table>
-
-
 </body>
 </html>
