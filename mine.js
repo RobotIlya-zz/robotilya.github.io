@@ -1,11 +1,14 @@
-let randSeed = Math.random() * 100; //Generate the number of mines based off a random seed
-let roundSeed = Math.round(randSeed); // Rounds the number of mines to closest whole number
+let easyMode = 15;
+let avgMode = 30;
+let hardMode = 60;
+  let mineArray = [];
+let button = "<input type='button' value='?' class='button'>"; // This populates  the cells with buttons
 
 function genGrid() { // This function is a massively inefficient way of generating a table with unique cell ids
 
     let x = document.createElement("TABLE");
       x.setAttribute("id", "Game");
-        x.setAttribute("border", "1");
+        /*x.setAttribute("border", "1");*/
           document.body.appendChild(x);
 
 for (var i = 0; i < 16; i++) { // This creates 16 rows
@@ -19,15 +22,17 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
   let cell = row.insertCell(0);
   cell.setAttribute("id", ("C"+i));
   row.appendChild(cell);
-  cell.innerHTML = "NEW CELL" + i;
-  let secondRow = document.getElementById("C15"); // This is redundant and has been added for testing
+  cell.innerHTML = button;
+
+  let secondRow = document.getElementById("C15");
+
   if (secondRow){ // If the script finds a value with ID=15, which it should
     for (var y = 0; y < 16; y++) {
       let row = document.getElementById(y);
       let cell = row.insertCell(0);
       cell.setAttribute("id", "C"+(y+16));
       row.appendChild(cell);
-      cell.innerHTML = "NEW CELL" + (y+16);
+      cell.innerHTML = button;
 
     let thirdRow = document.getElementById("C31");
 
@@ -37,7 +42,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
           let cell = row.insertCell(0);
           cell.setAttribute("id", "C"+(z+32));
           row.appendChild(cell);
-          cell.innerHTML = "NEW CELL" + (z+32);
+          cell.innerHTML = button;
 
     let fourthRow = document.getElementById("C47");
 
@@ -47,7 +52,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
         let cell = row.insertCell(0);
         cell.setAttribute("id", "C"+(r+48));
         row.appendChild(cell);
-        cell.innerHTML = "NEW CELL" + (r+48);
+        cell.innerHTML = button;
 
         let fifthRow = document.getElementById("C63");
 
@@ -57,7 +62,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
             let cell = row.insertCell(0);
             cell.setAttribute("id", "C"+(q+64));
             row.appendChild(cell);
-            cell.innerHTML = "NEW CELL" + (q+64);
+            cell.innerHTML = button;
 
             let sixthRow = document.getElementById("C79");
 
@@ -67,7 +72,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                 let cell = row.insertCell(0);
                 cell.setAttribute("id", "C"+(w+80));
                 row.appendChild(cell);
-                cell.innerHTML = "NEW CELL" + (w+80);
+                cell.innerHTML = button;
 
                 let seventhRow = document.getElementById("C95");
 
@@ -77,7 +82,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                     let cell = row.insertCell(0);
                     cell.setAttribute("id", "C"+(e+96));
                     row.appendChild(cell);
-                    cell.innerHTML = "NEW CELL" + (e+96);
+                    cell.innerHTML = button;
 
                     let eightRow = document.getElementById("C111");
 
@@ -87,7 +92,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                         let cell = row.insertCell(0);
                         cell.setAttribute("id", "C"+(t+112));
                         row.appendChild(cell);
-                        cell.innerHTML = "NEW CELL" + (t+112);
+                        cell.innerHTML = button;
 
                         let ninethRow = document.getElementById("C127");
 
@@ -97,7 +102,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                             let cell = row.insertCell(0);
                             cell.setAttribute("id", "C"+(a+128));
                             row.appendChild(cell);
-                            cell.innerHTML = "NEW CELL" + (a+128);
+                            cell.innerHTML = button;
 
                             let tenthRow = document.getElementById("C143");
 
@@ -107,7 +112,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                                 let cell = row.insertCell(0);
                                 cell.setAttribute("id", "C"+(s+144));
                                 row.appendChild(cell);
-                                cell.innerHTML = "NEW CELL" + (s+144);
+                                cell.innerHTML = button;
 
                                 let eleventhRow = document.getElementById("C159");
 
@@ -117,7 +122,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                                     let cell = row.insertCell(0);
                                     cell.setAttribute("id", "C"+(d+160));
                                     row.appendChild(cell);
-                                    cell.innerHTML = "NEW CELL" + (d+160);
+                                    cell.innerHTML = button;
 
                                     let twelvthRow = document.getElementById("C175");
 
@@ -127,7 +132,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                                         let cell = row.insertCell(0);
                                         cell.setAttribute("id", "C"+(f+176));
                                         row.appendChild(cell);
-                                        cell.innerHTML = "NEW CELL" + (f+176);
+                                        cell.innerHTML = button;
 
                                         let thirteenthRow = document.getElementById("C191");
 
@@ -137,7 +142,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                                             let cell = row.insertCell(0);
                                             cell.setAttribute("id", "C"+(c+192));
                                             row.appendChild(cell);
-                                            cell.innerHTML = "NEW CELL" + (c+192);
+                                            cell.innerHTML = button;
 
                                             let fourteenthRow = document.getElementById("C207");
 
@@ -147,7 +152,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                                                 let cell = row.insertCell(0);
                                                 cell.setAttribute("id", "C"+(v+208));
                                                 row.appendChild(cell);
-                                                cell.innerHTML = "NEW CELL" + (v+208);
+                                                cell.innerHTML = button;
 
                                                 let fifteenthRow = document.getElementById("C223");
 
@@ -157,7 +162,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                                                     let cell = row.insertCell(0);
                                                     cell.setAttribute("id", "C"+(b+224));
                                                     row.appendChild(cell);
-                                                    cell.innerHTML = "NEW CELL" + (b+224);
+                                                    cell.innerHTML = button;
 
                                                     let sixteenthRow = document.getElementById("C239");
 
@@ -167,7 +172,7 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                                                         let cell = row.insertCell(0);
                                                         cell.setAttribute("id", "C"+(n+240));
                                                         row.appendChild(cell);
-                                                        cell.innerHTML = "NEW CELL" + (n+240);
+                                                        cell.innerHTML = button;
                                                         if (n==15){console.log("THE TABLE SHOULD BE DONE NOW");}
     }
       }
@@ -201,41 +206,26 @@ for (var i = 0; i < 16; i++) { // Create a loop that iteratively adds cells to t
                       }
                     }
                       }
-console.log("The current number of mines is " + roundSeed);
-function easyMineCount(x){ // Adjust the number of mines to fit the EASY mode spec
-if (x < 15){
-  return x;
-}
-else if (x <= 60) {
-  return Math.round(x/3);
-}
-else {
-  return Math.round(x/4);
-}
-};
-console.log("The current number of mines for easy mode is now: " + easyMineCount(roundSeed));
 
-/* function intMineCount(){ // Adjust the number of mines to fit the INTERMEDIATE mode spec
-};
-function hardMineCount(){ // Adjust the number of mines to fit the HARD mode spec
-};
-*/
-
-/* document.getElementById("square").onclick = function() {checkForMine()};
-
-function checkForMine() {
-  if (true) {
-
-  } else {
-
-  }
-    document.getElementById("square").innerHTML = "YOU CLICKED ME!";
-} */
-window.setTimeout(gameTime, 1);//My table was being generated at the same time I tried to find it. This solves that issue by waiting 1ms
+window.setTimeout(gameTime, 1); //My table was being generated at the same time I tried to find it. This solves that issue by waiting 1ms
 function gameTime(){
     let table = document.getElementById("Game");
-    for (var i=0;i<16;i++){
-      let colNum = table.rows[i].cells.length;
-      console.log("There are this many columns in the " + i + "th row: " + colNum);
-    }
+      for (var i=0;i<256;i++){ // Assign a value from 0-255 to every button generated by the hacky script above.
+    let cell = document.getElementsByTagName("INPUT")[i];
+      cell.setAttribute("id", i);
+  }
+  function mineField(x){ // This generates where the mines will go based on the mode passed in. The user will be able to select this in the future.
+  for (var i=0; i<x; i++){
+  mineArray.push(Math.round(Math.random() * 100));
+}
+};
+  mineField(easyMode); // Hardcoding easy mode state for now.
+  console.log(mineArray);
+  console.log(mineArray.includes(25));
+  console.log(window.getElementByTagName("INPUT"));
+  document.getElementByTagName("INPUT").addEventListener("click", displayDate);
+
+function displayDate() {
+    document.getElementById("Game").innerHTML = Date();
+}
     };
