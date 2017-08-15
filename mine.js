@@ -221,11 +221,17 @@ function gameTime(){
 };
   mineField(easyMode); // Hardcoding easy mode state for now.
   console.log(mineArray);
-  console.log(mineArray.includes(25));
-  console.log(window.getElementByTagName("INPUT"));
-  document.getElementByTagName("INPUT").addEventListener("click", displayDate);
-
-function displayDate() {
-    document.getElementById("Game").innerHTML = Date();
+  let allButts = document.getElementsByTagName("input") // getElementsByTagName returns an array and I was trying to call the wrong thing on it. Fixed by iterating through it and assigning listeners.
+  for (i = 0; i < allButts.length; i++) {
+    allButts[i].addEventListener("click", isBoom);
 }
+  function isBoom(x) {
+    console.log("This is what isboom thinks mineArray is ==> " + mineArray);
+    console.log("This is what isBoom thinks was pressed ==> " + x.target.id);
+    let inButt = parseInt(x.target.id);
+    if (mineArray.includes(inButt)){
+      document.getElementById("Game").innerHTML = "fuck everything, you're now dead"; // Test case for seeing if you clicked on a mine or not.
+    }
+  }
+
     };
