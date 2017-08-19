@@ -1,0 +1,11 @@
+> Fortune teller
+- HTML picture positioned in middle of screen
+> can use css to center element
+- html positioned text box for output
+> under the picture
+- button to trigger output
+> make sure button has a defined [id=] id="teller"
+- fortunes to use
+> array
+
+- any easter eggs (like date/time based events)
