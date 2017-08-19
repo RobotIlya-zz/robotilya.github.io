@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        function getFortune(){
+          let fortune = ["You will die today","You will find luck in a bar","You will be sad unless you eat less tacos"];
+            let rand = Math.round(Math.round(Math.random()*10)/4);
+        if (fortune[rand] == undefined){ // Error handling in case the index called is outside of the # of fortunes we have
+              rand = 0
+        }
+        document.getElementById("test").innerHTML = fortune[rand]; // Write the fortune to the page
+        }
+        function load(){ // Initializes the button listener on body load
+        document.getElementById("fortune").addEventListener("click", getFortune);
+        }
+        </script>
+        <style>
+        .center {
+          text-align:center;
+          margin:auto;
+          background-color: #000000;
+        }
+          .button{}
+            .fortune{
+              color: #FFFFFF;
+        }
+        </style>
+    </head>
+    <body class="center" onload="load()">
+      <img src="psychic.jpg"><br>
+      <button class="button" id="fortune">Tell me my fortune</button>
+      <p class="fortune" id="test"></p>
+    </body>
+</html>
